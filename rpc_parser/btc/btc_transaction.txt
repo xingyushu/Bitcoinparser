@@ -1,0 +1,124 @@
+put btc_transaction
+PUT btc_transaction/raw/_mapping
+{
+      "raw": {
+        "properties": {
+          "blockhash": {
+            "type": "keyword"
+          },
+          "blockheight": {
+            "type": "keyword"
+          },
+          "fee": {
+            "type": "double"
+          },
+          "hash": {
+            "type": "keyword"
+          },
+          "hex": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256
+              }
+            }
+          },
+          "iscoinbase": {
+            "type": "boolean"
+          },
+          "locktime": {
+            "type": "integer"
+          },
+          "size": {
+            "type": "integer"
+          },
+          "txid": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256
+              }
+            }
+          },
+          "version": {
+            "type": "integer"
+          },
+          "vin": {
+            "type": "nested",
+            "properties": {
+              "addresses": {
+                "type": "keyword"
+              },
+              "coinbase": {
+                "type": "keyword"
+              },
+              "iscoinbase": {
+                "type": "boolean"
+              },
+              "scriptSig": {
+                "type": "nested",
+                "properties": {
+                  "asm": {
+                    "type": "text"
+                  },
+                  "hex": {
+                    "type": "keyword"
+                  }
+                }
+              },
+              "sequence": {
+                "type": "long"
+              },
+              "txid": {
+                "type": "keyword"
+              },
+              "value": {
+                "type": "double"
+              },
+              "vout": {
+                "type": "integer"
+              }
+            }
+          },
+          "vout": {
+            "type": "nested",
+            "properties": {
+              "n": {
+                "type": "integer"
+              },
+              "scriptPubKey": {
+                "type": "nested",
+                "properties": {
+                  "addresses": {
+                    "type": "keyword"
+                  },
+                  "asm": {
+                    "type": "text"
+                  },
+                  "hex": {
+                    "type": "keyword"
+                  },
+                  "reqSigs": {
+                    "type": "integer"
+                  },
+                  "type": {
+                    "type": "keyword"
+                  }
+                }
+              },
+              "value": {
+                "type": "double"
+              }
+            }
+          },
+          "vsize": {
+            "type": "integer"
+          },
+          "weight": {
+            "type": "integer"
+          }
+        }
+      }
+}

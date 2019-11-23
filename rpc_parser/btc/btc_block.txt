@@ -1,0 +1,53 @@
+put btc_block
+put btc_block/raw/_mapping
+{
+      "raw": {
+        "properties": {
+          "bits": {
+            "type": "keyword"
+          },
+          "chainwork": {
+            "type": "keyword"
+          },
+          "difficulty": {
+            "type": "long"
+          },
+          "hash": {
+            "type": "keyword"
+          },
+          "height": {
+            "type": "integer"
+          },
+          "mediantime": {
+            "type": "long"
+          },
+          "merkleroot": {
+            "type": "keyword"
+          },
+          "nTx": {
+            "type": "integer"
+          },
+          "nonce": {
+            "type": "long"
+          },
+          "previousblockhash": {
+            "type": "keyword"
+          },
+          "size": {
+            "type": "integer"
+          },
+          "strippedsize": {
+            "type": "integer"
+          },
+          "time": {
+            "type": "long"
+          },
+          "version": {
+            "type": "integer"
+          },
+          "weight": {
+            "type": "integer"
+          }
+        }
+      }
+}
