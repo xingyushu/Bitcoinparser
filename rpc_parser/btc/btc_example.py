@@ -107,7 +107,7 @@ if __name__ == '__main__':
 	rpc_password = '123456'
 	rpc_ip = '127.0.0.1'
 	rpc_port = 8332
-	es_ip = "172.16.2.56"
+	es_ip = "server"
 	es_port = 9200
 
 	height = int(sys.argv[1])

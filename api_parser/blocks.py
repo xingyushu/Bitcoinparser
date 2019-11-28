@@ -14,6 +14,6 @@ for raw_block in blk:
 	output = os.popen(command)
 	result = output.read()
 	    #print(result)
-	command2 = "curl -H 'Content-Type: application/x-ndjson' -XPOST 'http://172.16.2.56:9200/btcblocks/blocks/"+block.hash+"'"+" -d"+" ' "+result+" ' "
+	command2 = "curl -H 'Content-Type: application/x-ndjson' -XPOST 'http://server:9200/btcblocks/blocks/"+block.hash+"'"+" -d"+" ' "+result+" ' "
 	os.system(command2)
 

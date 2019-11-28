@@ -14,14 +14,10 @@ for raw_block in blk:
                 for no, output in enumerate(tx.outputs):
                         print(output.addresses[0].address)
                         add1= output.addresses[0].address
-                        # check0 = "http://172.16.2.56:9200/btcaddr/addrs/"+add1
-                        # check = 'curl'+" "+str(check0)
-                        # checkoutput = os.popen(check)
-                        # checkresult =checkoutput.read()
                         address_url="https://blockchain.info/rawaddr/"+add1
                         command = 'curl'+" "+str(address_url)
                         # if checkresult == None:
                         output = os.popen(command)
                         result = output.read()
-                        command2 = "curl -H 'Content-Type: application/x-ndjson' -XPOST 'http://172.16.2.56:9200/btcaddr/addrs/"+add1+"'"+" -d"+" ' "+result+" ' "
+                        command2 = "curl -H 'Content-Type: application/x-ndjson' -XPOST 'http://server:9200/btcaddr/addrs/"+add1+"'"+" -d"+" ' "+result+" ' "
                         os.system(command2)
